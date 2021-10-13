@@ -1,0 +1,29 @@
+{
+  "name": "remote-mac-lock",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "start": "tsc && node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevejkang/remote-mac-lock.git"
+  },
+  "keywords": [],
+  "author": "stevejkang <iam@juneyoung.io>",
+  "bugs": {
+    "url": "https://github.com/stevejkang/remote-mac-lock/issues"
+  },
+  "homepage": "https://github.com/stevejkang/remote-mac-lock#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@typescript-eslint/eslint-plugin": "^4.28.2",
+    "@typescript-eslint/parser": "^4.28.2",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
