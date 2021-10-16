@@ -13,7 +13,7 @@ class ExecuteScreenLock {
     response.status(200).json({ ok: true });
   }
 
-  execShellCommand = (cmd: string) => {
+  private execShellCommand = async (cmd: string) => {
     const exec = require('child_process').exec;
     return new Promise((resolve, reject) => {
       exec(cmd, (error: any, stdout: any, stderr: any) => {
