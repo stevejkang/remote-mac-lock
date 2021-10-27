@@ -1,5 +1,7 @@
 import express from 'express';
-
+import basicAuth from 'express-basic-auth';
+import * as dotenv from 'dotenv';
+dotenv.config();
 class App {
   public app: express.Application;
   public port: number;
@@ -7,6 +9,11 @@ class App {
   constructor(controllers: any, port: number = 3000) {
     this.app = express();
     this.port = port;
+
+    this.app.use('/', basicAuth({
+      challenge: true,
+      users: { [`${process.env.BASIC_AUTH_USER}`]: `${process.env.BASIC_AUTH_PASS}` },
+    }));
 
     this.initializeMiddlewares();
     this.initializeControllers(controllers);

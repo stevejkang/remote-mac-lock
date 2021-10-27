@@ -6,3 +6,6 @@
 
 # output
 /dist/
+
+# credentials
+.env
