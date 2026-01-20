@@ -1,10 +1,6 @@
-import App from './App';
-import ExecuteScreenLock from './controller/ExecuteScreenLock';
- 
-const app = new App(
-  [
-    new ExecuteScreenLock(),
-  ]
-);
- 
+import App from './App.js';
+import ExecuteScreenLock from './controller/ExecuteScreenLock.js';
+
+const app = new App([new ExecuteScreenLock()]);
+
 app.listen();
