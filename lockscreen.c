@@ -1,6 +1,5 @@
-extern int SACLockScreenImmediate( void );
+extern int SACLockScreenImmediate(void);
 
-int main()
-{
+int main() {
     return SACLockScreenImmediate();
 }
