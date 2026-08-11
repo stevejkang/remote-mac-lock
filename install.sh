@@ -21,17 +21,11 @@ case "$ARCH" in
 esac
 
 # Download latest release
-LATEST=$(curl -fsSL "https://api.github.com/repos/$REPO/releases/latest" | grep '"tag_name"' | sed -E 's/.*"([^"]+)".*/\1/')
-if [ -z "$LATEST" ]; then
-  echo "Error: failed to fetch latest release"
-  exit 1
-fi
-
 ASSET="remote-mac-lock-darwin-${ARCH}"
-URL="https://github.com/$REPO/releases/download/${LATEST}/${ASSET}"
+URL="https://github.com/$REPO/releases/latest/download/${ASSET}"
 
-echo "==> Downloading $LATEST for darwin/$ARCH..."
-curl -fsSL -o /tmp/remote-mac-lock "$URL"
+echo "==> Downloading latest release for darwin/$ARCH..."
+curl -fsSL -L -o /tmp/remote-mac-lock "$URL"
 chmod +x /tmp/remote-mac-lock
 sudo mv /tmp/remote-mac-lock "$INSTALL_BIN"
 
@@ -50,7 +44,7 @@ fi
 echo "==> Installing launchd service..."
 mkdir -p "$LAUNCH_AGENTS_DIR"
 
-curl -fsSL "https://raw.githubusercontent.com/$REPO/$LATEST/$PLIST_NAME" \
+curl -fsSL "https://raw.githubusercontent.com/$REPO/main/$PLIST_NAME" \
   | sed "s|/usr/local/bin/remote-mac-lock|$INSTALL_BIN|g" \
   > "$LAUNCH_AGENTS_DIR/$PLIST_NAME"
 
