@@ -6,7 +6,7 @@ import type { Controller } from '../App.js';
 const execAsync = promisify(exec);
 
 class ExecuteScreenLock implements Controller {
-  public readonly path = '/';
+  public readonly path = '/lock';
   public readonly router = Router();
 
   constructor() {

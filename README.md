@@ -10,4 +10,4 @@ make
 docker build -t remote-mac-lock .
 docker run -d --env-file .env -v $(pwd)/lockscreen:/app/lockscreen -p 3000:3000 remote-mac-lock
 ```
-And then, visit `http://<your-local-ip>:3000/`
+And then, visit `http://<your-local-ip>:3000/lock`
