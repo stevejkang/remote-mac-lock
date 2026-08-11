@@ -1,13 +1,40 @@
 # remote-mac-lock
 
-### Usage
-> This instruction is only available in macOS.
-> Also, make sure that all devices are connected to the same network.
+Remote screen lock utility for macOS. Trigger your Mac's lock screen from any device on the same network.
+
+## Install
+
+> macOS only.
+
 ```bash
-git clone https://github.com/stevejkang/remote-mac-lock && cd remote-mac-lock
-cp .env.example .env # set your own credentials for basic authentication
-make
-docker build -t remote-mac-lock .
-docker run -d --env-file .env -v $(pwd)/lockscreen:/app/lockscreen -p 3000:3000 remote-mac-lock
+curl -fsSL https://raw.githubusercontent.com/stevejkang/remote-mac-lock/main/install.sh | bash
 ```
-And then, visit `http://<your-local-ip>:3000/lock`
+
+Once installed, visit `http://<your-local-ip>:61000/lock` from any device on the same network.
+
+## Basic Authentication
+
+Authentication is optional. To enable it, edit `~/.config/remote-mac-lock/.env`:
+
+```
+BASIC_AUTH_USER=admin
+BASIC_AUTH_PASS=your-password
+```
+
+Then restart the service to apply:
+
+```bash
+launchctl kickstart -k gui/$(id -u)/com.stevejkang.remote-mac-lock
+```
+
+## Restart
+
+```bash
+launchctl kickstart -k gui/$(id -u)/com.stevejkang.remote-mac-lock
+```
+
+## Uninstall
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/stevejkang/remote-mac-lock/main/uninstall.sh | bash
+```

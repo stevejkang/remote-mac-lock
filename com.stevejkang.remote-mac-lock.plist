@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.stevejkang.remote-mac-lock</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/local/bin/remote-mac-lock</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>StandardOutPath</key>
+	<string>/tmp/remote-mac-lock.stdout.log</string>
+	<key>StandardErrorPath</key>
+	<string>/tmp/remote-mac-lock.stderr.log</string>
+</dict>
+</plist>
