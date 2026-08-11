@@ -1,12 +1,8 @@
 # macOS
 .DS_Store
 
-# npm
-/node_modules/
-
-# output
-/dist/
-/lockscreen
+# binary
+/remote-mac-lock
 
 # credentials
 .env
