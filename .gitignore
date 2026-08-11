@@ -6,6 +6,7 @@
 
 # output
 /dist/
+/lockscreen
 
 # credentials
 .env
